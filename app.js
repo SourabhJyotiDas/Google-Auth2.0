@@ -31,10 +31,10 @@ app.use(
 
 // //////////////////////////////////////////////
 
-// app.use(passport.authenticate("session"));
+app.use(passport.authenticate("session"));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.enable("trust proxy");
+app.enable("trust proxy");
 
 app.use(cookieParser());
 app.use(express.json());
