@@ -7,7 +7,6 @@ import passport from "passport";
 import { errorMiddleware } from "./middleware/errorMiddleware.js";
 import cors from "cors"
 import cookieParser from "cookie-parser";
-import cookieSession from "cookie-session";
 
 const app = express()
 export default app;
