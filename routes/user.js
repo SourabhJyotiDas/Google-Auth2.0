@@ -6,20 +6,21 @@ import { isAuthenticated } from "../middleware/auth.js";
 const router = express.Router();
 
 router.get(
-   "/googlelogin",
-   passport.authenticate("google", {
-     scope: ["profile"],
-   })
- );
- 
- router.get(
-   "/login",
-   passport.authenticate("google", {
-     successRedirect: "http://localhost:3000",
-   })
- );
+  "/googlelogin",
+  passport.authenticate("google", {
+    scope: ["profile"],
+  })
+);
 
-router.get("/me",isAuthenticated, getMyProfile);
+router.get(
+  "/login",
+  passport.authenticate("google", {
+    //  successRedirect: "http://localhost:3000",
+    successRedirect: "https://react-auth20.netlify.app",
+  })
+);
+
+router.get("/me", isAuthenticated, getMyProfile);
 
 router.get("/logout", logout);
 
