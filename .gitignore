@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-./config/config.env
+/config/config.env
 backend
 # production
 
