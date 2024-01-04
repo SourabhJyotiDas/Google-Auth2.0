@@ -9,7 +9,7 @@ export const connectPassport = () => {
          clientID: "915692287850-pcee4mbb0sfigrnb1mjikjnf0gik91ht.apps.googleusercontent.com",
          clientSecret: "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",
         //  callbackURL: "http://localhost:5000/api/v1/login"
-         callbackURL: "https://google-auth2-0.vercel.app/api/v1/login",
+         callbackURL: "https://tricky-dungarees-bull.cyclic.app/api/v1/login",
       },
       async function (accessToken, refreshToken, profile, done) {
         const user = await User.findOne({
