@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://react-auth20.netlify.app"],
+    origin: ["http://localhost:3000", "https://react-auth20.netlify.app","https://tricky-dungarees-bull.cyclic.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
