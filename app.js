@@ -8,7 +8,8 @@ import { errorMiddleware } from "./middleware/errorMiddleware.js";
 import cors from "cors"
 import cookieParser from "cookie-parser";
 
-const app = express()
+const app = express();
+
 export default app;
 
 config({ path: "./config/config.env" });
