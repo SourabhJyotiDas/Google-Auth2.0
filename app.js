@@ -23,9 +23,9 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,
-      httpOnly: true,
-      sameSite: "none",
+      secure: process.env.Mode === "development" ? false : true,
+      httpOnly: process.env.Mode === "development" ? false : true,
+      sameSite: process.env.Mode === "development" ? false : "none",
     },
   })
 );
@@ -43,12 +43,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://react-auth20.netlify.app","https://tricky-dungarees-bull.cyclic.app"],
+    origin: ["http://localhost:3000", "https://react-auth20.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-
-
 
 app.get("/", (req, res, next) => {
   res.send("<h1>Working</h1>");
