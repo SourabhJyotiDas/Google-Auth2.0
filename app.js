@@ -15,7 +15,6 @@ export default app;
 config({ path: "./config/config.env" });
 
 connectToDatabase();
-connectPassport();
 
 // / Using Middlewares
 app.use(
@@ -32,14 +31,19 @@ app.use(
 );
 
 // /////////////////////////////////////////////
+connectPassport();
 
 app.use(passport.session());
 app.use(passport.authenticate("session"));
 app.use(passport.initialize());
+app.enable("trust proxy");
+
 
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
 
 app.use(
   cors({
